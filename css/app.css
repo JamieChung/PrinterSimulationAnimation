@@ -1,0 +1,19 @@
+.container ol {
+	list-style-type:decimal;
+	padding-left: 5px;
+}
+.container ol li {
+	list-style-type: decimal;
+	list-style: decimal;
+}
+.container ol button {
+	width: 100%;
+	display: inline-block;
+}
+.container ol#completed-list button {
+	float:left;
+	width: 10%;
+}
+.container button {
+	margin-bottom: 2px;
+}

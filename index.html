@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Simulation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Loading Bootstrap -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<!-- Loading Flat UI -->
+	<link href="css/flat-ui.css" rel="stylesheet">
+	<link rel="shortcut icon" href="images/favicon.ico">
+
+
+	<link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<h1>Printer Simulation Animation
+			<small>by <a href="http://www.jamiechung.me">Jamie Chung</a></small>
+		</h1>
+		<div class="progress">
+			<div class="bar" id="bar-group" style="background: #1abc9c; width: 25%;"></div>
+			<div class="bar" id="bar-mac" style="background: #3498db; width: 25%;"></div>
+			<div class="bar" id="bar-next" style="background: #8e44ad; width: 25%;"></div>
+			<div class="bar" id="bar-printer" style="background: #e67e22; width: 25%;"></div>
+		</div>
+
+		<h3>Clock: <span id="clock">0.0</span></h3>
+		<h3>Completed Jobs: <span id="job-count">0</span> <small>/ <span id="total-job-count"></span></small></h3>
+
+		<h3>Average Time: <span id="average-time">0</span></h3>
+		<h3>Average Jobs: <span id="average-jobs">0</span></h3>
+		<form class="form-inline">
+			<button class="btn btn-large" id="start-button">Start</button>
+			<button class="btn btn-large" id="pause-button">Pause</button>
+			<button class="btn btn-large" id="reset-button">Reset</button>
+			<button class="btn btn-large" id="animation-button"><span class="fui-checkmark-24"></span> Animation</button>
+			<div class="input-prepend input-append">
+				<input class="span1" placeholder="1" value="1" id="animation-time" maxlength="4" type="text">
+				<span class="add-on">millisecond (1 = fast, 9999 = slow)</span>
+			</div>
+		</form>
+
+<!-- <h3>Settings</h3>
+<div class="share mrl span4">
+            <ul>
+              <li>
+                <label class="share-label" for="share-toggle2">Animation</label>
+                <div class="toggle">
+                  <label class="toggle-radio" for="share-toggle2">ON</label>
+                  <input type="radio" name="share-toggles" id="share-toggle2" value="toggle1">
+                  <label class="toggle-radio" for="share-toggle1">OFF</label>
+                  <input type="radio" name="share-toggles" id="share-toggle1" value="toggle2" checked="checked">
+                </div>
+              </li>
+            </ul>
+            <a href="#" class="btn btn-primary btn-block btn-large">Save</a>
+          </div>
+ -->
+
+
+          		<div class="clearfix"> </div>
+		<div class="row" style="height:400px; ">
+			<div class="span3">
+				<h2 style="border-bottom:5px solid #1abc9c;">Job Arrivals</h2>
+				<ol id="group-list">
+				</ol>
+			</div>
+			<div class="span3">
+				<h2 style="border-bottom:5px solid #3498db;">Macintosh</h2>
+				<p>Utilization: <span id="mac-util">0.0</span></p>
+				<ol id="mac-list">
+				</ol>
+			</div>
+			<div class="span3">
+				<h2 style="border-bottom:5px solid #8e44ad;">NeXTstation</h2>
+				<p>Utilization:<span id="next-util">0.0</span></p>
+				<ol id="next-list">
+				</ol>
+			</div>
+			<div class="span3">
+				<h2 style="border-bottom:5px solid #e67e22;">Laser Printer</h2>
+				<p>Utilization:<span id="printer-util">0.0</span></p>
+				<ol id="printer-list">
+				</ol>
+			</div>
+		</div>
+		<div class="row" style="display:none;">
+			<div class="span12">
+				<h2 style="border-bottom:5px solid #bdc3c7;">Completed Jobs</h2>
+				<ul id="completed-list"></ul>
+			</div>
+		</div>
+
+		<!-- <canvas id="printerQueueGraph" height="450" width="900"></canvas> -->
+
+	</div>
+
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/underscore.js"></script>
+	<script type="text/javascript" src="js/backbone.js"></script>
+	<script type="text/javascript" src="js/Chart.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
